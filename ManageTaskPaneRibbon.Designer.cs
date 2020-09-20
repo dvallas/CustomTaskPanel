@@ -38,11 +38,9 @@ namespace ToggleScriptToolsTaskPanelVisibility
         /// </summary>
         private void InitializeComponent()
         {
-            this.components = new System.ComponentModel.Container();
             this.tab1 = this.Factory.CreateRibbonTab();
             this.TaskPaneManager = this.Factory.CreateRibbonGroup();
             this.ScriptTools2 = this.Factory.CreateRibbonToggleButton();
-            this.notifyIcon1 = new System.Windows.Forms.NotifyIcon(this.components);
             this.tab1.SuspendLayout();
             this.TaskPaneManager.SuspendLayout();
             this.SuspendLayout();
@@ -66,11 +64,6 @@ namespace ToggleScriptToolsTaskPanelVisibility
             this.ScriptTools2.Name = "ScriptTools2";
             this.ScriptTools2.Click += new Microsoft.Office.Tools.Ribbon.RibbonControlEventHandler(this.ScriptTools2_Click);
             // 
-            // notifyIcon1
-            // 
-            this.notifyIcon1.Text = "notifyIcon1";
-            this.notifyIcon1.Visible = true;
-            // 
             // ManageTaskPaneRibbon
             // 
             this.Name = "ManageTaskPaneRibbon";
@@ -90,7 +83,6 @@ namespace ToggleScriptToolsTaskPanelVisibility
         internal Microsoft.Office.Tools.Ribbon.RibbonTab tab1;
         internal Microsoft.Office.Tools.Ribbon.RibbonGroup TaskPaneManager;
         internal Microsoft.Office.Tools.Ribbon.RibbonToggleButton ScriptTools2;
-        private System.Windows.Forms.NotifyIcon notifyIcon1;
     }
 
 }

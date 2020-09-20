@@ -13,18 +13,38 @@ namespace CustomTaskPanel
 {
     public partial class ScriptToolsPane : UserControl
     {
-        public Microsoft.Office.Interop.Word.Document nativeDocument;
-        public ScriptToolsPane()
+      public Microsoft.Office.Interop.Word.Document nativeDocument;
+      public ScriptToolsPane()
         {
             InitializeComponent();
             //System.Windows.Forms.MessageBox.Show("in the control Initialize");
+            //else { Globals.ThisAddIn.Application.Documents.Add(new Application.Document()); }
+        }
+        private void SetupDocument()
+        {
             if (Globals.ThisAddIn.Application.Documents.Count > 0)
             {
                 nativeDocument = Globals.ThisAddIn.Application.ActiveDocument;
                 Populate();
+                Microsoft.Office.Tools.Word.Document vstoDoc = (Microsoft.Office.Tools.Word.Document)Globals.Factory.GetVstoObject(nativeDocument);
+                vstoDoc.SelectionChange += new Microsoft.Office.Tools.Word.SelectionEventHandler(ThisDocument_SelectionChange);
             }
-            //else { Globals.ThisAddIn.Application.Documents.Add(new Application.Document()); }
+
         }
+
+        void ThisDocument_SelectionChange(object sender, Microsoft.Office.Tools.Word.SelectionEventArgs e)
+        {
+            var s = Globals.ThisAddIn.Application.Selection.Range.Paragraphs[1].Range.get_Style().NameLocal;
+            if (s != null)
+            System.Windows.Forms.MessageBox.Show(nativeDocument.Name + " was clicked.  Style: " + s);
+        }
+
+
+        //void ThisDocument_OnClick(object sender, Microsoft.Office.Tools.Word.ClickEventArgs e)
+        //{
+        //    var s = nativeDocument.Paragraphs[1].Range.get_Style();
+        //    System.Windows.Forms.MessageBox.Show(nativeDocument.Name + " was clicked.  Style: " + s.NameLocal);
+        //}
         private void Populate()
         {
             this.CharNames.Items.Add("Fred");
@@ -38,7 +58,7 @@ namespace CustomTaskPanel
 
         private void btnDirection_Click(object sender, EventArgs e)
         {
-            nativeDocument = Globals.ThisAddIn.Application.ActiveDocument;
+            SetupDocument(); 
             var p = nativeDocument.Paragraphs.Add();
             p.Reset();
             p.Range.Text = "()";
@@ -51,7 +71,8 @@ namespace CustomTaskPanel
 
         private void btnName_Click(object sender, EventArgs e)
         {
-            nativeDocument = Globals.ThisAddIn.Application.ActiveDocument;
+            SetupDocument();
+            SetupDocument(); 
             var p = nativeDocument.Paragraphs.Add();
             p.Reset();
             p.set_Style(nativeDocument.Styles["sCharacter Name"]);
@@ -59,7 +80,7 @@ namespace CustomTaskPanel
 
         private void btnSlug_Click(object sender, EventArgs e)
         {
-            nativeDocument = Globals.ThisAddIn.Application.ActiveDocument;
+            SetupDocument();
             var p = nativeDocument.Paragraphs.Add();
             p.Reset();
             p.set_Style(nativeDocument.Styles["sSlugline"]);
@@ -67,7 +88,7 @@ namespace CustomTaskPanel
 
         private void btnDialog_Click(object sender, EventArgs e)
         {
-            nativeDocument = Globals.ThisAddIn.Application.ActiveDocument;
+            SetupDocument();
             var p = nativeDocument.Paragraphs.Add();
             p.Reset();
             p.set_Style(nativeDocument.Styles["sDialog"]);
@@ -75,7 +96,7 @@ namespace CustomTaskPanel
 
         private void btnAction_Click(object sender, EventArgs e)
         {
-            nativeDocument = Globals.ThisAddIn.Application.ActiveDocument;
+            SetupDocument();
             var p = nativeDocument.Paragraphs.Add();
             p.Reset();
             p.set_Style(nativeDocument.Styles["sAction"]);
@@ -83,7 +104,7 @@ namespace CustomTaskPanel
 
         private void btnCutTo_Click(object sender, EventArgs e)
         {
-            nativeDocument = Globals.ThisAddIn.Application.ActiveDocument;
+            SetupDocument();
             var p = nativeDocument.Paragraphs.Add();
             //var s = p.Range.get_Style();
             //MessageBox.Show("After Reset: " + s.NameLocal);
@@ -96,7 +117,7 @@ namespace CustomTaskPanel
         }
         private void btnDissolve_Click(object sender, EventArgs e)
         {
-            nativeDocument = Globals.ThisAddIn.Application.ActiveDocument;
+            SetupDocument();
             var p = nativeDocument.Paragraphs.Add();
             p.Range.Text = "DISSOLVE TO:";
             p.Range.set_Style(nativeDocument.Styles["sDissolveTo:"]);
@@ -109,7 +130,7 @@ namespace CustomTaskPanel
 
         private void btn2ndSlug_Click(object sender, EventArgs e)
         {
-            nativeDocument = Globals.ThisAddIn.Application.ActiveDocument;
+            SetupDocument();
             var p = nativeDocument.Paragraphs.Add();
             p.Reset();
             p.set_Style(nativeDocument.Styles["sSecondarySlug"]);
@@ -117,7 +138,7 @@ namespace CustomTaskPanel
 
         private void btnNotes_Click(object sender, EventArgs e)
         {
-            nativeDocument = Globals.ThisAddIn.Application.ActiveDocument;
+            SetupDocument();
             var p = nativeDocument.Paragraphs.Add();
             p.Reset();
             p.set_Style(nativeDocument.Styles["sNotes"]);
@@ -125,7 +146,7 @@ namespace CustomTaskPanel
 
         private void btnParaphrase_Click(object sender, EventArgs e)
         {
-            nativeDocument = Globals.ThisAddIn.Application.ActiveDocument;
+            SetupDocument();
             var p = nativeDocument.Paragraphs.Add();
             p.Reset();
             p.set_Style(nativeDocument.Styles["sSceneParaphrase"]);
@@ -133,7 +154,7 @@ namespace CustomTaskPanel
 
         private void btnSceneSumm_Click(object sender, EventArgs e)
         {
-            nativeDocument = Globals.ThisAddIn.Application.ActiveDocument;
+            SetupDocument();
             var p = nativeDocument.Paragraphs.Add();
             p.Reset();
             p.set_Style(nativeDocument.Styles["Summary"]);

@@ -55,7 +55,7 @@
             this.btnDirection.TabIndex = 0;
             this.btnDirection.Text = "Direction";
             this.btnDirection.UseVisualStyleBackColor = true;
-            this.btnDirection.UseWaitCursor = true;
+            //this.btnDirection.UseWaitCursor = true;
             this.btnDirection.Click += new System.EventHandler(this.btnDirection_Click);
             // 
             // btnDialog
@@ -66,7 +66,7 @@
             this.btnDialog.TabIndex = 1;
             this.btnDialog.Text = "Dialog";
             this.btnDialog.UseVisualStyleBackColor = true;
-            this.btnDialog.UseWaitCursor = true;
+            //this.btnDialog.UseWaitCursor = true;
             this.btnDialog.Click += new System.EventHandler(this.btnDialog_Click);
             // 
             // btnAction
@@ -77,7 +77,7 @@
             this.btnAction.TabIndex = 2;
             this.btnAction.Text = "Action";
             this.btnAction.UseVisualStyleBackColor = true;
-            this.btnAction.UseWaitCursor = true;
+            //this.btnAction.UseWaitCursor = true;
             this.btnAction.Click += new System.EventHandler(this.btnAction_Click);
             // 
             // btnDissolve
@@ -88,7 +88,7 @@
             this.btnDissolve.TabIndex = 3;
             this.btnDissolve.Text = "Dissolve To:";
             this.btnDissolve.UseVisualStyleBackColor = true;
-            this.btnDissolve.UseWaitCursor = true;
+            //this.btnDissolve.UseWaitCursor = true;
             this.btnDissolve.Click += new System.EventHandler(this.btnDissolve_Click);
             // 
             // btnNotes
@@ -99,7 +99,7 @@
             this.btnNotes.TabIndex = 4;
             this.btnNotes.Text = "Notes";
             this.btnNotes.UseVisualStyleBackColor = true;
-            this.btnNotes.UseWaitCursor = true;
+            //this.btnNotes.UseWaitCursor = true;
             this.btnNotes.Click += new System.EventHandler(this.btnNotes_Click);
             // 
             // btnName
@@ -110,7 +110,7 @@
             this.btnName.TabIndex = 5;
             this.btnName.Text = "Name";
             this.btnName.UseVisualStyleBackColor = true;
-            this.btnName.UseWaitCursor = true;
+            //this.btnName.UseWaitCursor = true;
             this.btnName.Click += new System.EventHandler(this.btnName_Click);
             // 
             // btnSlug
@@ -121,7 +121,7 @@
             this.btnSlug.TabIndex = 6;
             this.btnSlug.Text = "Slugline";
             this.btnSlug.UseVisualStyleBackColor = true;
-            this.btnSlug.UseWaitCursor = true;
+            //this.btnSlug.UseWaitCursor = true;
             this.btnSlug.Click += new System.EventHandler(this.btnSlug_Click);
             // 
             // btnCutTo
@@ -132,7 +132,7 @@
             this.btnCutTo.TabIndex = 7;
             this.btnCutTo.Text = "Cut To:";
             this.btnCutTo.UseVisualStyleBackColor = true;
-            this.btnCutTo.UseWaitCursor = true;
+            //this.btnCutTo.UseWaitCursor = true;
             this.btnCutTo.Click += new System.EventHandler(this.btnCutTo_Click);
             // 
             // btn2ndSlug
@@ -143,7 +143,7 @@
             this.btn2ndSlug.TabIndex = 8;
             this.btn2ndSlug.Text = "2nd SLug";
             this.btn2ndSlug.UseVisualStyleBackColor = true;
-            this.btn2ndSlug.UseWaitCursor = true;
+            //this.btn2ndSlug.UseWaitCursor = true;
             this.btn2ndSlug.Click += new System.EventHandler(this.btn2ndSlug_Click);
             // 
             // btnParaphrase
@@ -154,7 +154,7 @@
             this.btnParaphrase.TabIndex = 9;
             this.btnParaphrase.Text = "Paraphrase";
             this.btnParaphrase.UseVisualStyleBackColor = true;
-            this.btnParaphrase.UseWaitCursor = true;
+            //this.btnParaphrase.UseWaitCursor = true;
             this.btnParaphrase.Click += new System.EventHandler(this.btnParaphrase_Click);
             // 
             // CharNames
@@ -164,7 +164,7 @@
             this.CharNames.Name = "CharNames";
             this.CharNames.Size = new System.Drawing.Size(166, 21);
             this.CharNames.TabIndex = 10;
-            this.CharNames.UseWaitCursor = true;
+            //this.CharNames.UseWaitCursor = true;
             // 
             // comboBox2
             // 
@@ -173,7 +173,7 @@
             this.comboBox2.Name = "comboBox2";
             this.comboBox2.Size = new System.Drawing.Size(166, 21);
             this.comboBox2.TabIndex = 11;
-            this.comboBox2.UseWaitCursor = true;
+            //this.comboBox2.UseWaitCursor = true;
             // 
             // panel1
             // 
@@ -193,7 +193,7 @@
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(169, 180);
             this.panel1.TabIndex = 12;
-            this.panel1.UseWaitCursor = true;
+            //this.panel1.UseWaitCursor = true;
             // 
             // button2
             // 
@@ -203,7 +203,7 @@
             this.button2.TabIndex = 11;
             this.button2.Text = "Spare";
             this.button2.UseVisualStyleBackColor = true;
-            this.button2.UseWaitCursor = true;
+            //this.button2.UseWaitCursor = true;
             // 
             // btnSceneSumm
             // 
@@ -213,7 +213,7 @@
             this.btnSceneSumm.TabIndex = 10;
             this.btnSceneSumm.Text = "Scene";
             this.btnSceneSumm.UseVisualStyleBackColor = true;
-            this.btnSceneSumm.UseWaitCursor = true;
+            //this.btnSceneSumm.UseWaitCursor = true;
             this.btnSceneSumm.Click += new System.EventHandler(this.btnSceneSumm_Click);
             // 
             // treeView1
@@ -222,7 +222,7 @@
             this.treeView1.Name = "treeView1";
             this.treeView1.Size = new System.Drawing.Size(166, 269);
             this.treeView1.TabIndex = 13;
-            this.treeView1.UseWaitCursor = true;
+            //this.treeView1.UseWaitCursor = true;
             this.treeView1.AfterSelect += new System.Windows.Forms.TreeViewEventHandler(this.treeView1_AfterSelect);
             // 
             // ScriptToolsPane
@@ -239,7 +239,7 @@
             this.Location = new System.Drawing.Point(5, 0);
             this.Name = "ScriptToolsPane";
             this.Size = new System.Drawing.Size(172, 531);
-            this.UseWaitCursor = true;
+            //this.UseWaitCursor = true;
             this.panel1.ResumeLayout(false);
             this.ResumeLayout(false);
 

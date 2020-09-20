@@ -1,4 +1,7 @@
-﻿namespace CustomTaskPanel
+﻿//using Microsoft.Office.Interop.Word;
+using System.Linq;
+
+namespace CustomTaskPanel
 {
     public partial class ThisAddIn
     {
@@ -8,13 +11,17 @@
 
         private void ThisAddIn_Startup(object sender, System.EventArgs e)
         {
-            myUserControl = new CustomTaskPanel.ScriptToolsPane();
-            myCustomTaskPane = Globals.ThisAddIn.CustomTaskPanes.Add(myUserControl, "Script Tools");
-            myCustomTaskPane.Visible = true;
-            // System.Windows.Forms.MessageBox.Show("Here in Startup");
+               //event Microsoft.Office.Tools.Word.SelectionEventHandler SelectionChange;
+                myUserControl = new CustomTaskPanel.ScriptToolsPane();
+                myCustomTaskPane = Globals.ThisAddIn.CustomTaskPanes.Add(myUserControl, "Script Tools");
+                myCustomTaskPane.Visible = true;
+                // System.Windows.Forms.MessageBox.Show("Here in Startup");
         }
 
         private void ThisAddIn_Shutdown(object sender, System.EventArgs e)
+        {
+        }
+        private void DocumentSelectionChange()
         {
         }
 

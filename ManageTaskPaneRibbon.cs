@@ -19,12 +19,14 @@ namespace ToggleScriptToolsTaskPanelVisibility
 
         private void ScriptTools2_Click(object sender, RibbonControlEventArgs e)
         {
-            CustomTaskPanel.ScriptToolsPane myUserControl = new CustomTaskPanel.ScriptToolsPane();
-            myCustomTaskPane = Globals.ThisAddIn.CustomTaskPanes.Add(myUserControl, "Script Tools");
-            myCustomTaskPane.Visible = true;
-            myUserControl.Visible = true;
-            // Globals.ThisAddIn.CustomTaskPanes.Remove(myCustomTaskPane);
-
+            if (Globals.ThisAddIn.CustomTaskPanes.Count() < 1)
+            {
+                CustomTaskPanel.ScriptToolsPane myUserControl = new CustomTaskPanel.ScriptToolsPane();
+                myCustomTaskPane = Globals.ThisAddIn.CustomTaskPanes.Add(myUserControl, "Script Tools");
+                myCustomTaskPane.Visible = true;
+                myUserControl.Visible = true;
+                // Globals.ThisAddIn.CustomTaskPanes.Remove(myCustomTaskPane);
+            }
 
         }
     }
